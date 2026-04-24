@@ -101,10 +101,7 @@
         </div>
 
         <div class="relative z-20 text-center px-6 max-w-5xl">
-            <div class="inline-flex items-center gap-3 px-5 py-2 border border-orange-500/30 rounded-full mb-10 bg-black/50 backdrop-blur-md">
-                <span class="w-2 h-2 rounded-full bg-orange-500"></span>
-                <span class="text-orange-500 text-[10px] tracking-[0.4em] font-black uppercase italic">Dhanmondi's Premier Rooftop Grill</span>
-            </div>
+            <!-- Removed the indicator badge for a cleaner look -->
             <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.8] uppercase">
                 Artisanal <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-600 to-orange-400 animate-text-shimmer">Kitchen</span>
             </h1>
@@ -208,7 +205,6 @@
                             Confirm Reservation
                         </button>
                     </form>
-                    <!-- Decorative background element for form -->
                     <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-orange-600/5 rounded-full blur-3xl"></div>
                 </div>
             </div>
@@ -331,7 +327,6 @@
     </footer>
 
     <script>
-        // Menu Data Expanded from Public Listings
         const menuData = {
             popular: [
                 { name: "Matka Mutton Dum Biryani", price: "2,150", desc: "Our signature matka biryani slow-cooked for 6+ hours with artisanal ghee. Served in a clay pot. (1:4)", tag: "Signature", image: "https://images.unsplash.com/photo-1563379091339-03b17af4a4f9?auto=format&fit=crop&q=80&w=800" },
@@ -358,7 +353,6 @@
             ]
         };
 
-        // UI Interactions
         const navbar = document.getElementById('navbar');
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -366,7 +360,6 @@
         const menuGrid = document.getElementById('menu-grid');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
-        // Scroll listener for navbar
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 navbar.classList.add('bg-stone-950/95', 'backdrop-blur-md', 'py-3', 'border-b', 'border-orange-500/10', 'shadow-2xl');
@@ -377,7 +370,6 @@
             }
         });
 
-        // Mobile menu toggle
         menuToggle.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.contains('hidden');
             if (isOpen) {
@@ -400,7 +392,6 @@
             });
         });
 
-        // Tab switcher
         function switchTab(tabKey) {
             document.querySelectorAll('.menu-tab').forEach(btn => {
                 btn.classList.remove('menu-tab-active');
@@ -442,7 +433,6 @@
             }, 300);
         }
 
-        // Initialize
         window.onload = () => {
             renderMenu('popular');
             lucide.createIcons();
