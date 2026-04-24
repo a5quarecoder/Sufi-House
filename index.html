@@ -41,6 +41,18 @@
             outline: none !important;
             box-shadow: 0 0 0 2px rgba(234, 88, 12, 0.1) !important;
         }
+        /* Extra Depth for Navbar */
+        .nav-scrolled {
+            background: linear-gradient(to bottom, rgba(12, 10, 9, 0.98), rgba(12, 10, 9, 0.95));
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5), 0 1px 0 0 rgba(234, 88, 12, 0.1);
+        }
+        /* Custom Scrollbar for Menu Tabs */
+        #tab-container::-webkit-scrollbar {
+            height: 2px;
+        }
+        #tab-container::-webkit-scrollbar-thumb {
+            background: #ea580c;
+        }
     </style>
 </head>
 <body class="bg-stone-950 text-stone-100 overflow-x-hidden">
@@ -48,15 +60,15 @@
     <!-- Navigation -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 bg-transparent">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-4">
-                <div class="relative w-12 h-12 md:w-14 md:h-14 bg-stone-900 rounded-full border border-orange-500/30 flex items-center justify-center p-1 overflow-hidden shadow-lg shadow-orange-500/10">
+            <div class="flex items-center gap-4 group">
+                <div class="relative w-12 h-12 md:w-14 md:h-14 bg-stone-900 rounded-full border border-orange-500/30 flex items-center justify-center p-1 overflow-hidden shadow-lg shadow-orange-500/10 group-hover:shadow-orange-500/20 transition-all">
                     <div class="w-full h-full rounded-full bg-black flex items-center justify-center relative">
-                        <div class="absolute top-1 w-2 h-3 bg-orange-500 transform -skew-x-12 rounded-sm"></div>
-                        <span class="text-orange-500 italic text-xl font-black mt-2 leading-none" style="font-family: serif;">Sufi</span>
+                        <div class="absolute top-1 w-2 h-3 bg-orange-500 transform -skew-x-12 rounded-sm shadow-[0_0_10px_rgba(234,88,12,0.5)]"></div>
+                        <span class="text-orange-500 italic text-xl font-black mt-2 leading-none drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]" style="font-family: serif;">Sufi</span>
                     </div>
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-lg md:text-xl font-black tracking-tighter text-white leading-none uppercase">SUFI HOUSE</span>
+                    <span class="text-lg md:text-xl font-black tracking-tighter text-white leading-none uppercase group-hover:text-orange-500 transition-colors">SUFI HOUSE</span>
                     <span class="text-[9px] tracking-[0.4em] text-orange-500 mt-1 uppercase font-bold">Artisanal Tradition</span>
                 </div>
             </div>
@@ -81,7 +93,7 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-stone-950 flex flex-col items-center justify-center space-y-8 hidden opacity-0 transition-all duration-300">
-        <div class="w-24 h-24 bg-stone-900 rounded-full border-2 border-orange-500 flex items-center justify-center p-4 mb-4">
+        <div class="w-24 h-24 bg-stone-900 rounded-full border-2 border-orange-500 flex items-center justify-center p-4 mb-4 shadow-[0_0_30px_rgba(234,88,12,0.2)]">
             <span class="text-orange-500 text-3xl font-black italic" style="font-family: serif;">Sufi</span>
         </div>
         <a href="#home" class="mobile-link text-xl tracking-[0.2em] font-black uppercase text-stone-100">Home</a>
@@ -101,11 +113,10 @@
         </div>
 
         <div class="relative z-20 text-center px-6 max-w-5xl">
-            <!-- Removed the indicator badge for a cleaner look -->
-            <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.8] uppercase">
+            <h1 class="text-6xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.8] uppercase text-white drop-shadow-2xl">
                 Artisanal <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-orange-600 to-orange-400 animate-text-shimmer">Kitchen</span>
             </h1>
-            <p class="text-stone-500 text-base md:text-xl mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
+            <p class="text-stone-400 text-base md:text-xl mb-12 max-w-2xl mx-auto font-medium leading-relaxed">
                 Preserving the soul of Old Dhaka's slow-cooked traditions. Authentic Matka Dum Biryani, heritage Nehari, and charcoal-kissed Kebabs.
             </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -122,26 +133,22 @@
     <!-- Menu Section -->
     <section id="menu" class="py-24 bg-stone-950">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-10">
-                <div class="max-w-xl">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="w-8 h-[2px] bg-orange-600"></div>
-                        <span class="text-orange-500 text-xs tracking-[0.5em] font-black uppercase">Archive</span>
-                    </div>
-                    <h2 class="text-5xl md:text-6xl font-black mb-6 tracking-tight uppercase italic leading-none">The <span class="text-orange-600">Signature</span> List</h2>
-                    <p class="text-stone-500 font-medium text-lg leading-relaxed">Crafted with 100% artisanal ghee and heirloom spice blends. Every dish is cooked fresh, slow, and with heart.</p>
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center gap-4 mb-4">
+                    <div class="w-8 h-[2px] bg-orange-600"></div>
+                    <span class="text-orange-500 text-xs tracking-[0.5em] font-black uppercase">The Master Collection</span>
+                    <div class="w-8 h-[2px] bg-orange-600"></div>
                 </div>
-                
-                <div class="flex flex-wrap gap-3 pb-2 w-full md:w-auto" id="tab-container">
-                    <button onclick="switchTab('popular')" class="menu-tab menu-tab-active px-6 py-2 rounded-xl text-[10px] tracking-widest uppercase font-black transition-all duration-300 border border-stone-900 bg-stone-900/20 text-stone-600">Popular</button>
-                    <button onclick="switchTab('kebabs')" class="menu-tab px-6 py-2 rounded-xl text-[10px] tracking-widest uppercase font-black transition-all duration-300 border border-stone-900 bg-stone-900/20 text-stone-600">Kebabs</button>
-                    <button onclick="switchTab('breakfast')" class="menu-tab px-6 py-2 rounded-xl text-[10px] tracking-widest uppercase font-black transition-all duration-300 border border-stone-900 bg-stone-900/20 text-stone-600">Breakfast</button>
-                    <button onclick="switchTab('desserts')" class="menu-tab px-6 py-2 rounded-xl text-[10px] tracking-widest uppercase font-black transition-all duration-300 border border-stone-900 bg-stone-900/20 text-stone-600">Sides & Sweets</button>
-                </div>
+                <h2 class="text-5xl md:text-6xl font-black mb-6 tracking-tight uppercase italic leading-none">Our <span class="text-orange-600">Menu</span></h2>
+            </div>
+            
+            <!-- Category Tabs - Scrollable on mobile -->
+            <div class="flex overflow-x-auto gap-3 pb-8 mb-12 no-scrollbar justify-start lg:justify-center" id="tab-container">
+                <!-- Injected via JS -->
             </div>
 
             <!-- Menu Grid -->
-            <div id="menu-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-10 transition-opacity duration-300">
+            <div id="menu-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8 transition-opacity duration-300">
                 <!-- Content injected via JS -->
             </div>
         </div>
@@ -175,33 +182,33 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label class="text-[10px] uppercase tracking-widest font-black text-stone-500 ml-2">Full Name</label>
-                                <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm">
+                                <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm transition-all">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] uppercase tracking-widest font-black text-stone-500 ml-2">Phone Number</label>
-                                <input type="tel" placeholder="01XXX-XXXXXX" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm">
+                                <input type="tel" placeholder="017XX-XXXXXX" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm transition-all">
                             </div>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                             <div class="space-y-2">
                                 <label class="text-[10px] uppercase tracking-widest font-black text-stone-500 ml-2">Guests</label>
-                                <select class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm appearance-none">
+                                <select class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm appearance-none transition-all cursor-pointer">
                                     <option>2 Person</option>
                                     <option>4 Person</option>
                                     <option>6 Person</option>
-                                    <option>8+ Person</option>
+                                    <option>10+ Person</option>
                                 </select>
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] uppercase tracking-widest font-black text-stone-500 ml-2">Date</label>
-                                <input type="date" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm">
+                                <input type="date" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm transition-all">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[10px] uppercase tracking-widest font-black text-stone-500 ml-2">Time</label>
-                                <input type="time" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm">
+                                <input type="time" class="w-full px-6 py-4 rounded-2xl border bg-transparent text-sm transition-all">
                             </div>
                         </div>
-                        <button type="submit" class="w-full bg-orange-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20 active:scale-95">
+                        <button type="button" onclick="alert('Reservation logic would go here!')" class="w-full bg-orange-600 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-orange-500 transition-all shadow-xl shadow-orange-900/20 active:scale-95">
                             Confirm Reservation
                         </button>
                     </form>
@@ -265,20 +272,26 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 mb-24">
                 <div class="col-span-1 lg:col-span-2">
                     <div class="flex items-center gap-4 mb-8">
-                        <div class="w-12 h-12 bg-stone-900 rounded-full border border-orange-500/30 flex items-center justify-center">
-                            <span class="text-orange-500 italic font-black" style="font-family: serif;">S</span>
+                        <div class="w-12 h-12 bg-stone-900 rounded-full border border-orange-500/30 flex items-center justify-center shadow-lg shadow-orange-500/10">
+                            <span class="text-orange-500 italic font-black text-xl" style="font-family: serif;">S</span>
                         </div>
                         <h3 class="text-3xl font-black tracking-tighter text-white uppercase">SUFI HOUSE</h3>
                     </div>
                     <p class="text-stone-500 text-sm max-w-sm font-medium leading-loose mb-10">
                         Experience elevated Mughlai dining on the 10th floor. Specialized in matka-style biryani and heritage recipes that bring the soul of Old Dhaka to Dhanmondi.
                     </p>
-                    <div class="flex gap-6">
-                        <a href="https://facebook.com/sufihousebd" target="_blank" class="p-4 bg-stone-900 rounded-2xl text-stone-400 hover:text-white hover:bg-blue-600 transition-all shadow-xl border border-stone-800">
-                            <i data-lucide="facebook"></i>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="https://facebook.com/sufihousebd" target="_blank" class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center text-stone-400 hover:text-white hover:bg-blue-600 transition-all shadow-xl border border-stone-800 hover:scale-110 active:scale-95 group">
+                            <i data-lucide="facebook" class="w-5 h-5 group-hover:scale-110"></i>
                         </a>
-                        <a href="https://instagram.com/sufihousebd" target="_blank" class="p-4 bg-stone-900 rounded-2xl text-stone-400 hover:text-white hover:bg-orange-600 transition-all shadow-xl border border-stone-800">
-                            <i data-lucide="instagram"></i>
+                        <a href="https://instagram.com/sufihousebd" target="_blank" class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center text-stone-400 hover:text-white hover:bg-gradient-to-tr from-yellow-500 via-red-500 to-purple-600 transition-all shadow-xl border border-stone-800 hover:scale-110 active:scale-95 group">
+                            <i data-lucide="instagram" class="w-5 h-5 group-hover:scale-110"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center text-stone-400 hover:text-white hover:bg-green-600 transition-all shadow-xl border border-stone-800 hover:scale-110 active:scale-95 group">
+                            <i data-lucide="message-circle" class="w-5 h-5 group-hover:scale-110"></i>
+                        </a>
+                        <a href="#" target="_blank" class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center text-stone-400 hover:text-white hover:bg-red-700 transition-all shadow-xl border border-stone-800 hover:scale-110 active:scale-95 group">
+                            <i data-lucide="youtube" class="w-5 h-5 group-hover:scale-110"></i>
                         </a>
                     </div>
                 </div>
@@ -320,36 +333,89 @@
                     </div>
                 </div>
             </div>
-            <div class="pt-12 border-t border-stone-900/50 flex flex-col lg:flex-row justify-between items-center gap-10">
-                <p class="text-stone-700 text-[10px] tracking-[0.4em] uppercase font-black text-center">© 2024 SUFI HOUSE | Artisanal Matka Biryani & Grill</p>
+            <div class="pt-12 border-t border-stone-900/50 flex flex-col lg:flex-row justify-between items-center gap-10 text-center">
+                <p class="text-stone-700 text-[10px] tracking-[0.4em] uppercase font-black">© 2024 SUFI HOUSE | Artisanal Matka Biryani & Grill</p>
+                <div class="flex gap-6 text-stone-800 text-[9px] font-black uppercase tracking-widest">
+                    <a href="#" class="hover:text-orange-500 transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-orange-500 transition-colors">Safety</a>
+                    <a href="#" class="hover:text-orange-500 transition-colors">Menu</a>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
+        const categories = [
+            { id: 'biryani', name: '🥘 Matka Biryani' },
+            { id: 'tehari', name: '🍚 Tehari & Polao' },
+            { id: 'platters', name: '🍽️ Platters' },
+            { id: 'combos', name: '🍱 Combos' },
+            { id: 'wraps', name: '🌯 Wraps' },
+            { id: 'grill', name: '🔥 Kebab & Grill' },
+            { id: 'curries', name: '🍛 Curries' },
+            { id: 'breads', name: '🍞 Rice & Bread' },
+            { id: 'desserts', name: '🍮 Sweets & Borhani' },
+            { id: 'breakfast', name: '🍳 Breakfast' }
+        ];
+
         const menuData = {
-            popular: [
+            biryani: [
                 { name: "Matka Mutton Dum Biryani", price: "2,150", desc: "Our signature matka biryani slow-cooked for 6+ hours with artisanal ghee. Served in a clay pot. (1:4)", tag: "Signature", image: "https://images.unsplash.com/photo-1563379091339-03b17af4a4f9?auto=format&fit=crop&q=80&w=800" },
-                { name: "Chicken Matka Biryani", price: "1,850", desc: "Dum-style biryani with tender chicken pieces, cooked in a seasoned clay pot. (1:4)", tag: "Popular", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800" },
-                { name: "Mixed Kabab Platter", price: "1,250", desc: "An assortment of Adana, Sheek, Malai, and Boti kebabs served with fresh naan and dips.", tag: "For Sharing", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800" },
-                { name: "Beef Tehari", price: "490", desc: "Fragrant mustard oil tehari with tender beef chunks. A Dhanmondi specialty.", tag: "", image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=800" }
+                { name: "Matka Chicken Dum Biryani", price: "1,850", desc: "Dum-style biryani with tender chicken pieces, cooked in a seasoned clay pot. (1:4)", tag: "Popular", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800" }
             ],
-            kebabs: [
-                { name: "Chicken Malai Tikka", price: "340", desc: "Boneless chicken marinated in cream, cheese, and mild spices. Chargrilled to melt in your mouth.", tag: "Bestseller", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800" },
-                { name: "Beef Sheek Kebab", price: "400", desc: "Traditional minced beef skewers with aromatic spices and a smoky charcoal finish.", tag: "", image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800" },
-                { name: "Beef Adana Kebab", price: "400", desc: "Turkish-style hand-minced beef seasoned with sumac and traditional herbs.", tag: "", image: "https://images.unsplash.com/photo-1626776877921-678550186782?auto=format&fit=crop&q=80&w=800" },
-                { name: "Afghani Malai Kebab", price: "360", desc: "Chicken skewers marinated in a rich yogurt and cashew nut paste.", tag: "", image: "https://images.unsplash.com/photo-1601356616077-695728ecf769?auto=format&fit=crop&q=80&w=800" }
+            tehari: [
+                { name: "Beef Tehari with Onion Salad", price: "490", desc: "Fragrant mustard oil tehari with tender beef chunks. A Dhanmondi specialty.", tag: "House Special", image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Tehari Meal", price: "550", desc: "Complete meal with Tehari, Egg, and Borhani.", tag: "", image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Saffron Polao Meal", price: "520", desc: "Fragrant saffron polao served with chicken and salad.", tag: "", image: "https://images.unsplash.com/photo-1596797038530-2c39fa81b487?auto=format&fit=crop&q=80&w=800" },
+                { name: "Saffron Polao with Chicken Roast", price: "425", desc: "Quarter chicken roast with artisanal spices and saffron rice.", tag: "Best Seller", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Saffron Polao with Butter Chicken", price: "480", desc: "Creamy butter chicken served with premium saffron rice.", tag: "", image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800" },
+                { name: "Saffron Polao with Chicken Korma", price: "450", desc: "Classic white chicken korma paired with fragrant polao.", tag: "", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800" }
             ],
-            breakfast: [
-                { name: "Beef Nehari", price: "360", desc: "Traditional slow-cooked delicacy with beef shanks in a rich spiced broth. (Friday & Saturday Special)", tag: "Must Try", image: "https://images.unsplash.com/photo-1547928501-a2a31b6f56f4?auto=format&fit=crop&q=80&w=800" },
-                { name: "Sufi Special Halwa", price: "170", desc: "Gram-flour halwa cooked in pure artisanal ghee. A sweet start to your day.", tag: "", image: "https://images.unsplash.com/photo-1589113198592-f9de4151336c?auto=format&fit=crop&q=80&w=800" },
-                { name: "Mutton Matka Dum Biryani (Individual)", price: "550", desc: "Individual portion of our signature dum biryani served in a small matka.", tag: "", image: "https://images.unsplash.com/photo-1563379091339-03b17af4a4f9?auto=format&fit=crop&q=80&w=800" }
+            platters: [
+                { name: "Sufi Mutton Dum Biryani Platter", price: "3,800", desc: "Giant group platter of our signature mutton biryani for 4-5 people.", tag: "Family Deal", image: "https://images.unsplash.com/photo-1563379091339-03b17af4a4f9?auto=format&fit=crop&q=80&w=800" },
+                { name: "Sufi Chicken Dum Biryani Platter", price: "3,200", desc: "Family chicken biryani platter for 4-5 people.", tag: "", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Mixed Kebab Platter", price: "1,450", desc: "A combination of Adana, Sheek, Malai, and Boti kebabs with Naan.", tag: "Recommended", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Chicken Kebab Platter", price: "1,150", desc: "Assortment of different chicken kebabs for 2-3 people.", tag: "", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800" }
+            ],
+            combos: [
+                { name: "Chicken Feast Combo", price: "850", desc: "Roast, Polao, Kebab, and Borhani.", tag: "", image: "https://images.unsplash.com/photo-1596797038530-2c39fa81b487?auto=format&fit=crop&q=80&w=800" },
+                { name: "Beef Lover’s Combo", price: "920", desc: "Achari Beef, Polao, Sheek Kebab, and Drinks.", tag: "", image: "https://images.unsplash.com/photo-1512058560366-cd24270083cd?auto=format&fit=crop&q=80&w=800" },
+                { name: "Mutton Delight Combo", price: "1,100", desc: "Mutton Rezala, Luchi/Naan, Boti Kebab, and Dessert.", tag: "", image: "https://images.unsplash.com/photo-1545243191-203b2f152550?auto=format&fit=crop&q=80&w=800" }
+            ],
+            wraps: [
+                { name: "Beef Paratha Wrap", price: "380", desc: "Spiced beef wrap in a crispy ghee paratha.", tag: "", image: "https://images.unsplash.com/photo-1505253149613-112d21d9f6a9?auto=format&fit=crop&q=80&w=800" },
+                { name: "Shish Tawook Wrap", price: "320", desc: "Mediterranean style chicken skewers wrapped in pita.", tag: "", image: "https://images.unsplash.com/photo-1601356616077-695728ecf769?auto=format&fit=crop&q=80&w=800" },
+                { name: "Chicken Malai Wrap", price: "340", desc: "Creamy malai kebab pieces wrapped in soft naan.", tag: "", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800" }
+            ],
+            grill: [
+                { name: "Mutton Boti Kebab", price: "430", desc: "Classic spiced mutton chunks grilled over charcoal.", tag: "Traditional", image: "https://images.unsplash.com/photo-1626776877921-678550186782?auto=format&fit=crop&q=80&w=800" },
+                { name: "Chicken Malai Kebab", price: "340", desc: "Velvety cream-marinated chicken breast pieces.", tag: "Bestseller", image: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Beef Sheek Kebab", price: "400", desc: "Charcoal-grilled minced beef skewers.", tag: "", image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800" },
+                { name: "Beef Adana Kebab", price: "400", desc: "Turkish style minced beef skewer.", tag: "", image: "https://images.unsplash.com/photo-1626776877921-678550186782?auto=format&fit=crop&q=80&w=800" },
+                { name: "Shish Tawook", price: "360", desc: "Lemon-garlic marinated chicken breast cubes.", tag: "", image: "https://images.unsplash.com/photo-1601356616077-695728ecf769?auto=format&fit=crop&q=80&w=800" },
+                { name: "Paneer Tikka", price: "320", desc: "Chargrilled paneer cubes with bell peppers.", tag: "Veg", image: "https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&q=80&w=800" }
+            ],
+            curries: [
+                { name: "Chicken Korma", price: "380", desc: "Rich yogurt based white gravy chicken.", tag: "", image: "https://images.unsplash.com/photo-1633945274405-b6c8069047b0?auto=format&fit=crop&q=80&w=800" },
+                { name: "Butter Chicken", price: "340", desc: "Creamy tomato-based boneless chicken.", tag: "Top Rated", image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80&w=800" },
+                { name: "Beef Achari", price: "410", desc: "Tangy and spicy pickled beef curry.", tag: "", image: "https://images.unsplash.com/photo-1512058560366-cd24270083cd?auto=format&fit=crop&q=80&w=800" },
+                { name: "Mutton Rezala", price: "450", desc: "Classic Bengali mutton curry with white gravy.", tag: "", image: "https://images.unsplash.com/photo-1545243191-203b2f152550?auto=format&fit=crop&q=80&w=800" }
+            ],
+            breads: [
+                { name: "Butter Naan", price: "75", desc: "Fresh from the tandoor.", tag: "", image: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&q=80&w=800" },
+                { name: "Ghee Paratha", price: "75", desc: "Flaky paratha with artisanal ghee.", tag: "", image: "https://images.unsplash.com/photo-1505253149613-112d21d9f6a9?auto=format&fit=crop&q=80&w=800" },
+                { name: "Garlic Naan", price: "90", desc: "Infused with fresh garlic.", tag: "", image: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&q=80&w=800" }
             ],
             desserts: [
-                { name: "Welcome Drinks (Specialty)", price: "120", desc: "Signature saffron and mint infused cool drink to refresh your palate.", tag: "", image: "https://images.unsplash.com/photo-1514327605112-b887c0e61c0a?auto=format&fit=crop&q=80&w=800" },
-                { name: "Borhani", price: "150", desc: "Traditional spiced yogurt drink with mint and mustard, perfect for digestion.", tag: "", image: "https://images.unsplash.com/photo-1545243191-203b2f152550?auto=format&fit=crop&q=80&w=800" },
-                { name: "Firni & Kheer Platter", price: "280", desc: "Slow-cooked rice pudding and sweet kheer flavored with cardamom and nuts.", tag: "Sweet Ending", image: "https://images.unsplash.com/photo-1589113198592-f9de4151336c?auto=format&fit=crop&q=80&w=800" },
-                { name: "Butter Naan", price: "75", desc: "Soft tandoori bread brushed with premium butter.", tag: "", image: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&q=80&w=800" }
+                { name: "Firni", price: "120", desc: "Traditional slow-cooked ground rice pudding.", tag: "", image: "https://images.unsplash.com/photo-1589113198592-f9de4151336c?auto=format&fit=crop&q=80&w=800" },
+                { name: "Borhani", price: "150", desc: "The essential spiced yogurt digestive.", tag: "Must Have", image: "https://images.unsplash.com/photo-1545243191-203b2f152550?auto=format&fit=crop&q=80&w=800" },
+                { name: "Kheer", price: "140", desc: "Rich and thickened milk based dessert.", tag: "", image: "https://images.unsplash.com/photo-1589113198592-f9de4151336c?auto=format&fit=crop&q=80&w=800" }
+            ],
+            breakfast: [
+                { name: "Beef Nehari", price: "360", desc: "Legendary slow-cooked bone-in beef shank gravy.", tag: "8 AM - 11 AM", image: "https://images.unsplash.com/photo-1547928501-a2a31b6f56f4?auto=format&fit=crop&q=80&w=800" },
+                { name: "Mutton Brain Masala", price: "350", desc: "Sufi specialty brain sautéed in rich spices.", tag: "Rare Find", image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&q=80&w=800" },
+                { name: "Luchi", price: "40", desc: "Soft deep fried puffed bread.", tag: "", image: "https://images.unsplash.com/photo-1626132646595-364273872583?auto=format&fit=crop&q=80&w=800" },
+                { name: "Shredded Tawa Beef", price: "410", desc: "Beef shredded and seared on high-heat tawa.", tag: "", image: "https://images.unsplash.com/photo-1512058560366-cd24270083cd?auto=format&fit=crop&q=80&w=800" }
             ]
         };
 
@@ -358,14 +424,15 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
         const menuGrid = document.getElementById('menu-grid');
+        const tabContainer = document.getElementById('tab-container');
         const mobileLinks = document.querySelectorAll('.mobile-link');
 
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-stone-950/95', 'backdrop-blur-md', 'py-3', 'border-b', 'border-orange-500/10', 'shadow-2xl');
+                navbar.classList.add('nav-scrolled', 'py-3');
                 navbar.classList.remove('bg-transparent', 'py-6');
             } else {
-                navbar.classList.remove('bg-stone-950/95', 'backdrop-blur-md', 'py-3', 'border-b', 'border-orange-500/10', 'shadow-2xl');
+                navbar.classList.remove('nav-scrolled', 'py-3');
                 navbar.classList.add('bg-transparent', 'py-6');
             }
         });
@@ -384,45 +451,45 @@
             lucide.createIcons();
         });
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                menuIcon.setAttribute('data-lucide', 'menu');
-                lucide.createIcons();
-            });
-        });
+        function renderTabs() {
+            tabContainer.innerHTML = categories.map((cat, idx) => `
+                <button onclick="switchTab('${cat.id}')" id="btn-${cat.id}" class="menu-tab whitespace-nowrap px-6 py-2 rounded-xl text-[10px] tracking-widest uppercase font-black transition-all duration-300 border border-stone-900 bg-stone-900/20 text-stone-600 ${idx === 0 ? 'menu-tab-active' : ''}">
+                    ${cat.name}
+                </button>
+            `).join('');
+        }
 
         function switchTab(tabKey) {
             document.querySelectorAll('.menu-tab').forEach(btn => {
                 btn.classList.remove('menu-tab-active');
             });
-            event.target.classList.add('menu-tab-active');
+            document.getElementById(`btn-${tabKey}`).classList.add('menu-tab-active');
             renderMenu(tabKey);
         }
 
         function renderMenu(tabKey) {
             menuGrid.style.opacity = '0';
             setTimeout(() => {
-                const items = menuData[tabKey];
+                const items = menuData[tabKey] || [];
                 menuGrid.innerHTML = items.map(item => `
                     <div class="group bg-stone-900/30 border border-stone-800/40 rounded-[2rem] overflow-hidden hover:border-orange-500/30 transition-all duration-500 flex flex-col sm:flex-row shadow-2xl">
-                        <div class="w-full sm:w-56 h-56 overflow-hidden relative shrink-0">
+                        <div class="w-full sm:w-48 h-48 overflow-hidden relative shrink-0">
                             <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                             <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
                             ${item.tag ? `<div class="absolute top-4 left-4 bg-orange-600 text-white text-[8px] font-black uppercase tracking-[0.2em] px-3 py-1.5 rounded-lg shadow-2xl">${item.tag}</div>` : ''}
                         </div>
                         <div class="p-8 flex flex-col justify-center flex-1">
                             <div class="flex justify-between items-start mb-4">
-                                <h3 class="text-xl md:text-2xl font-black text-white group-hover:text-orange-500 transition-colors uppercase tracking-tight leading-tight">${item.name}</h3>
+                                <h3 class="text-xl md:text-xl font-black text-white group-hover:text-orange-500 transition-colors uppercase tracking-tight leading-tight">${item.name}</h3>
                                 <div class="text-right">
                                     <span class="text-orange-500 font-mono text-xl font-black">৳${item.price}</span>
                                 </div>
                             </div>
-                            <p class="text-stone-500 text-sm font-medium leading-relaxed line-clamp-3 italic mb-6">"${item.desc}"</p>
+                            <p class="text-stone-500 text-xs font-medium leading-relaxed italic mb-6">"${item.desc}"</p>
                             <div class="mt-auto pt-4 border-t border-stone-800/50 flex items-center justify-between">
                                 <span class="text-[10px] text-stone-600 font-bold uppercase tracking-widest italic">Artisanal Choice</span>
                                 <button class="text-[10px] tracking-[0.2em] font-black uppercase text-orange-500 group-hover:translate-x-2 transition-transform flex items-center gap-2">
-                                    Quick Order <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                    Order <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                                 </button>
                             </div>
                         </div>
@@ -434,7 +501,8 @@
         }
 
         window.onload = () => {
-            renderMenu('popular');
+            renderTabs();
+            renderMenu('biryani');
             lucide.createIcons();
         };
     </script>
